@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reza Aswin Saputra - Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.025em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        p {
+            color: #6b7280;
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+        nav a {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-left: 2rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #2563eb;
+        }
+        .btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 1rem 3rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1e40af;
+            transform: scale(1.05);
+        }
+
+        /* Animasi Fade-In */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gaya Card */
+        .card {
+            background-color: #f3f4f6;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        /* Animasi Teks "Tentang Saya" */
+        .about-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px); /* Tambahkan transform awal */
+            animation: fadeInWord 0.3s forwards;
+        }
+        @keyframes fadeInWord {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ikon Kontak */
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Efek Parallax */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Gaya Stiker */
+        .sticker {
+            position: absolute;
+            width: 70px; /* Ukuran lebih besar */
+            height: 70px; /* Ukuran lebih besar */
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: rotate 5s linear infinite, float 4s ease-in-out infinite; /* Animasi rotate dan float */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px); /* Lebih tinggi */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-white fixed w-full top-0 z-10 shadow-sm">
+        <div class="container flex justify-end items-center py-6">
+            <nav class="flex">
+                <a href="#about">Tentang</a>
+                <a href="#experience">Pengalaman</a>
+                <a href="#skills">Keterampilan</a>
+                <a href="#contact">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white pt-20 parallax relative" style="background-image: url('static/images/hero-bg.jpg');">
+        <div class="container animate-in">
+            <h1 class="text-5xl font-bold text-center mb-4">Reza Aswin Saputra</h1>
+            <p class="mt-6 text-center max-w-3xl mx-auto">Spesialis teknologi dengan 5+ tahun pengalaman, memimpin digitalisasi 500.000+ dokumen untuk Badan Pertanahan Nasional dengan efisiensi hingga 50%.</p>
+            <div class="text-center">
+                <a href="#contact" class="btn mt-8">Hubungi Saya</a>
+            </div>
+        </div>
+
+        <!-- Stiker -->
+        <div class="sticker bg-red-500 top-10 left-10">🚀</div>
+        <div class="sticker bg-green-500 bottom-20 right-20">💡</div>
+        <div class="sticker bg-blue-500 top-40 right-10">💻</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-16">
+        <div class="container animate-in">
+            <h2 class="text-4xl font-bold mb-8">Tentang Saya</h2>
+            <div class="relative">
+                <p class="text-lg leading-relaxed mb-4">
+                    Sebagai inovator teknologi yang berbasis di Tangerang, saya memiliki semangat untuk menciptakan solusi digital yang berdampak positif bagi bisnis dan organisasi. Perjalanan saya dimulai dari SMAN 24 Kabupaten Tangerang dan terus berlanjut dengan eksplorasi di bidang Teknik Informatika.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    Dengan pengalaman lebih dari 5 tahun, saya berdedikasi untuk membantu klien mencapai tujuan mereka melalui solusi teknologi yang inovatif dan efisien. Saya percaya bahwa teknologi adalah kunci untuk membuka potensi dan mencapai kesuksesan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-gray-100 py-16">
+        <div class="container animate-in">
+            <h2 class="text-4xl font-bold mb-8">Pengalaman Profesional</h2>
+            <div class="card animate-in">
+                <h3 class="text-2xl font-semibold mb-2">Koordinator Digitalisasi Dokumen</h3>
+                <p class="text-gray-600">PT. Alamanda Reka Cipta | 2020 - 2025</p>
+                <p class="mt-4">Memimpin tim 25 orang untuk mendigitalisasi 500.000+ dokumen di 9 wilayah (Temanggung, Sukabumi, Subang, Indramayu, Pelalawan, Kampar, Teluk Meranti, Pekanbaru, Tigaraksa). Melatih 50+ staf BPN, meningkatkan efisiensi hingga 50%.</p>
+            </div>
+            <div class="card animate-in">
+                <h3 class="text-2xl font-semibold mb-2">Network Operation Center Admin</h3>
+                <p class="text-gray-600">PT. Smartfren Telecom | 2020 - 2021</p>
+                <p class="mt-4">Mengelola digitalisasi data pelanggan dengan akurasi tinggi dan menyusun laporan berbasis Excel untuk mendukung operasional.</p>
+            </div>
+            <div class="card animate-in">
+                <h3 class="text-2xl font-semibold mb-2">Desktop Support Engineer</h3>
+                <p class="text-gray-600">PT. Berca Hardayaperkasa | 2018 - 2019</p>
+                <p class="mt-4">Menangani perbaikan teknis jaringan, update sistem Windows, serta troubleshoot perangkat lunak dan perangkat keras dengan target 150 user per bulan untuk klien seperti PT. Sinar Mas Land, PT. Pama Persada Nusantara, PT ISS, mengurangi waktu henti hingga 20%.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white py-16">
+        <div class="container animate-in">
+            <h2 class="text-4xl font-bold mb-8">Keterampilan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <p>Digitalisasi & Manajemen Arsip: Mengelola proyek skala besar dengan akurasi tinggi.</p>
+                </div>
+                <div class="card">
+                    <p>Dukungan Teknis: Troubleshooting sistem dan perangkat keras.</p>
+                </div>
+                <div class="card">
+                    <p>Pemeliharaan Jaringan: Pemantauan dan pengelolaan jaringan.</p>
+                </div>
+                <div class="card">
+                    <p>Kepemimpinan Tim: Memimpin tim untuk hasil optimal.</p>
+                </div>
+                <div class="card">
+                    <p>Analisis Data: Laporan operasional dengan Excel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-16">
+        <div class="container animate-in text-center">
+            <h2 class="text-4xl font-bold mb-8">Hubungi Saya</h2>
+            <p class="mb-6 max-w-2xl mx-auto">Tertarik mendiskusikan solusi teknologi? Kirim pesan untuk memulai kolaborasi!</p>
+            <div class="mb-6 space-y-4">
+                <p>
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <a href="mailto:rezaswins@gmail.com" class="hover:text-blue-600">rezaswins@gmail.com</a>
+                </p>
+                <p>
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    <a href="tel:+6282277874188" class="hover:text-blue-600">+62 822-7787-4188</a>
+                </p>
+                <p>
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    J. Danau Agung Blok FG X, Tangerang, Indonesia
+                </p>
+            </div>
+            <a href="mailto:rezaswins@gmail.com" class="btn">Kirim Pesan</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8">
+        <div class="container text-center">
+            <p class="text-gray-600">© 2025 Reza Aswin Saputra. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in and slide-up animation on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.animate-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible'); // Reset animasi saat elemen tidak terlihat
+                    }
+                });
+            }, { threshold: 0.1 }); // Ubah threshold sesuai kebutuhan
+
+            items.forEach(item => observer.observe(item));
+        });
+    </script>
+</body>
+</html>
